@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postinstall": "--legacy-peer-deps"
+    "postinstall": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

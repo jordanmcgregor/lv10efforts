@@ -4,6 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preinstall": "npx npm-force-resolutions",
     "postinstall": "npm install --legacy-peer-deps"
   },
   "dependencies": {

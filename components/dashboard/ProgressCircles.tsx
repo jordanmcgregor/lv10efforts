@@ -87,7 +87,7 @@ export default function ProgressCircles({ questions, efforts }: { questions: any
                                 variant={
                                     parseFloat(((calculateValue(question.effort, efforts, bottomDate, topDate, question.target) / question.target) * 100).toFixed(0)) >= 75
                                         ? 'success'
-                                        : parseFloat(((calculateValue(question.effort, efforts, bottomDate, topDate, question.target) / question.target) * 100).toFixed(0)) > 50
+                                        : parseFloat(((calculateValue(question.effort, efforts, bottomDate, topDate, question.target) / question.target) * 100).toFixed(0)) >= 50
                                             ? 'warning'
                                             : 'error'
                                 }

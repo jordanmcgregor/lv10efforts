@@ -9,6 +9,13 @@ export async function POST(request: NextRequest) {
     if (!database) {
         return NextResponse.json({ error: 'Database name is required' }, { status: 400 });
     }
-    const response = await supabase.from(database).insert(body);
-    return NextResponse.json({ status: response });
+    try {
+        const response = await supabase.from(database).insert(body);
+        console.log(response)
+        return NextResponse.json({ message: response, status: response.status });
+    } catch (error) {
+        return NextResponse.json({ message: error, status: 400 });
+    }
+
+
 }

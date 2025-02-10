@@ -1,15 +1,24 @@
 // 'use client'
 import { ProgressCircle } from "@/components/tremor/ProgressCircle";
 import { Card } from "@/components/tremor/Card";
+import DrawerHero from "@/components/composites/Drawer";
 // import { useState } from 'react'
 
-export default function ProgressCircles({ questions, efforts }: { questions: any, efforts: any }) {
+export default function ProgressCircles({
+    questions,
+    efforts,
+    slug,
+}: {
+    questions: any;
+    efforts: any;
+    slug: string;
+}) {
     const bottomDate = new Date(new Date().setDate(new Date().getDate() - 30))
     const topDate = new Date()
     // const [bottomDate, setBottomDate] = useState(new Date(new Date().setDate(new Date().getDate() - 30)))
     // const [topDate, setTopDate] = useState(new Date())
 
-    console.log(questions)
+    // console.log(questions)
     return (
         <div>
             <div className="block sm:flex sm:items-start sm:justify-between sm:space-x-6">
@@ -21,29 +30,33 @@ export default function ProgressCircles({ questions, efforts }: { questions: any
                         Last 30 days
                     </p>
                 </div>
-                <span className="mt-6 inline-flex w-full justify-center space-x-4 whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-900 dark:border-gray-900 dark:text-gray-50 sm:mt-0 sm:w-fit sm:items-center">
-                    <span tabIndex={1} className="flex items-center gap-1.5">
-                        <span
-                            aria-hidden={true}
-                            className="size-2.5 rounded-sm bg-red-600 dark:bg-red-500"
-                        />
-                        0-50
+
+                <div className="flex">
+                    <span className="mt-6 inline-flex w-full justify-center space-x-4 whitespace-nowrap rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-900 dark:border-gray-900 dark:text-gray-50 sm:mt-0 sm:w-fit sm:items-center">
+
+                        <span tabIndex={1} className="flex items-center gap-1.5">
+                            <span
+                                aria-hidden={true}
+                                className="size-2.5 rounded-sm bg-red-600 dark:bg-red-500"
+                            />
+                            0-50
+                        </span>
+                        <span tabIndex={1} className="flex items-center gap-1.5">
+                            <span
+                                aria-hidden={true}
+                                className="size-2.5 rounded-sm bg-yellow-600 dark:bg-yellow-500"
+                            />
+                            50-75
+                        </span>
+                        <span tabIndex={1} className="flex items-center gap-1.5">
+                            <span
+                                aria-hidden={true}
+                                className="size-2.5 rounded-sm bg-emerald-600 dark:bg-emerald-500"
+                            />
+                            75-100
+                        </span>
                     </span>
-                    <span tabIndex={1} className="flex items-center gap-1.5">
-                        <span
-                            aria-hidden={true}
-                            className="size-2.5 rounded-sm bg-yellow-600 dark:bg-yellow-500"
-                        />
-                        50-75
-                    </span>
-                    <span tabIndex={1} className="flex items-center gap-1.5">
-                        <span
-                            aria-hidden={true}
-                            className="size-2.5 rounded-sm bg-emerald-600 dark:bg-emerald-500"
-                        />
-                        75-100
-                    </span>
-                </span>
+                </div>
             </div>
 
 
@@ -100,7 +113,11 @@ export default function ProgressCircles({ questions, efforts }: { questions: any
                     </Card>
                 ))}
             </dl>
+            <div className="my-6 w-full">
+                <DrawerHero questions={questions} efforts={efforts} slug={slug} />
+            </div>
         </div >
+
     )
 }
 

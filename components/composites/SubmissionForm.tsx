@@ -26,15 +26,20 @@ import { ChevronDownIcon } from '@heroicons/react/16/solid'
 // }
 
 
-export default async function Instruments() {
+export default async function SubmissionForm({
+    questions,
+    efforts,
+    slug,
+}: {
+    questions: any;
+    efforts: any;
+    slug: string;
+}) {
     const supabase = await createClient();
-    const effortDatabase = 'temple_family_history_efforts'
-    const questionDatabase = 'temple_family_history_efforts_questions'
-    const { data: questions } = await supabase.from(questionDatabase).select();
 
     if (questions) {
         return (
-            <Form questions={questions} database={effortDatabase} />
+            <Form questions={questions} efforts={efforts} slug={slug} />
         )
     }
     return "Sorry wrong endpoint"

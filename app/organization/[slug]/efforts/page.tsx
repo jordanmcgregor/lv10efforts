@@ -4,7 +4,7 @@ import ProgressCircles from "@/components/dashboard/ProgressCircles";
 import DrawerHero from "@/components/composites/Drawer";
 import { Button } from "@/components/tremor/Button";
 
-export default async function EldersQuorumDashboard({ params }: { params: { slug: string } }) {
+export default async function EldersQuorumDashboard({ params }: { params: any }) {
     const supabase = await createClient();
     const { slug } = await params
     const effortDatabase = slug + '-efforts'

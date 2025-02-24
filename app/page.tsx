@@ -39,6 +39,23 @@ export default async function Home() {
           </li>
         </ul>
       </div>
+      <div className="p-16">
+        <span className="underline">Branch Presidency Links</span>
+        <ul className="list-disc">
+          <li>
+            <a className="text-blue-500 underline hover:text-blue-700" href="/organization/first-counselor/efforts">First Counselor</a>
+          </li>
+          <li>
+            <a className="text-blue-500 underline hover:text-blue-700" href="/organization/second-counselor/efforts">Second Counselor</a>
+          </li>
+          <li>
+            <a className="text-blue-500 underline hover:text-blue-700" href="/organization/executive-secretary/efforts">Executive Secretary</a>
+          </li>
+          <li>
+            <a className="text-blue-500 underline hover:text-blue-700" href="/organization/clerk/efforts">Clerk</a>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

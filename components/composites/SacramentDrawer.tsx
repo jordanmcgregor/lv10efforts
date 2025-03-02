@@ -1,4 +1,4 @@
-import SubmissionForm from '@/components/composites/SubmissionForm';
+import SubmissionForm from '@/components/composites/SacramentSubmission';
 import { Button } from '@/components/tremor/Button';
 import {
     Dialog,
@@ -12,30 +12,28 @@ import {
 } from "@/components/tremor/Dialog";
 import { Drawer, DrawerBody, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/tremor/Drawer';
 
-export default function DrawerHero({
-    questions,
-    efforts,
+export default function SacramentDrawer({
+    sacrament,
     slug,
 }: {
-    questions: any;
-    efforts: any;
+    sacrament: any;
     slug: string;
 }) {
     return (
         <div className="flex justify-center">
             <Drawer>
                 <DrawerTrigger asChild>
-                    <Button className="w-full" variant="primary">New Efforts Submission</Button>
+                    <Button className="w-full" variant="primary">Sacrament Names Submission</Button>
                 </DrawerTrigger>
                 <DrawerContent className="sm:max-w-lg">
                     <DrawerHeader>
-                        <DrawerTitle>Efforts Submission Form</DrawerTitle>
+                        <DrawerTitle>Sacrament Names Submission Form</DrawerTitle>
                         <DrawerDescription className="mt-1 text-sm">
-                            Fill out this form, and your dashboard will update with the new numbers along with past data.
+                            Fill out this form, and the word cloud will update with the new numbers along with past data.
                         </DrawerDescription>
                     </DrawerHeader>
                     <DrawerBody>
-                        <SubmissionForm questions={questions} efforts={efforts} slug={slug} />
+                        <SubmissionForm sacrament={sacrament} slug={slug} />
                     </DrawerBody>
                     {/* <DrawerFooter className="mt-6">
                         <DrawerClose asChild>

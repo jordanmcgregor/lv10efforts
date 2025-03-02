@@ -5,6 +5,7 @@ export async function POST(request: NextRequest) {
     const supabase = await createClient();
     const database = request.nextUrl.searchParams.get('database')
     const body = await request.json();
+    console.log(body)
 
     if (!database) {
         return NextResponse.json({ error: 'Database name is required' }, { status: 400 });

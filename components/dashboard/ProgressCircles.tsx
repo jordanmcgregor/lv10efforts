@@ -1,16 +1,22 @@
 // 'use client'
 import { ProgressCircle } from "@/components/tremor/ProgressCircle";
 import { Card } from "@/components/tremor/Card";
-import DrawerHero from "@/components/composites/Drawer";
+import EffortsDrawer from "@/components/composites/EffortsDrawer";
+import SacramentDrawer from "../composites/SacramentDrawer";
+import TempleDrawer from "../composites/TempleDrawer";
 // import { useState } from 'react'
 
 export default function ProgressCircles({
     questions,
     efforts,
+    sacrament,
+    temple,
     slug,
 }: {
     questions: any;
     efforts: any;
+    sacrament:any;
+    temple: any; 
     slug: string;
 }) {
     const bottomDate = new Date(new Date().setDate(new Date().getDate() - 30))
@@ -113,8 +119,10 @@ export default function ProgressCircles({
                     </Card>
                 ))}
             </dl>
-            <div className="my-6 w-full">
-                <DrawerHero questions={questions} efforts={efforts} slug={slug} />
+            <div className="my-6 w-full grid grid-cols-3 gap-3">
+                <EffortsDrawer questions={questions} efforts={efforts} slug={slug} />
+                <SacramentDrawer sacrament={sacrament} slug={slug} />
+                <TempleDrawer temple={temple} slug={slug} />
             </div>
         </div >
 

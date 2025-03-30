@@ -56,6 +56,17 @@ export default async function Home() {
           </li>
         </ul>
       </div>
+      <div className="p-16">
+        <span className="underline">Covenant Path Names:</span>
+        <ul className="list-disc">
+          <li>
+            <a className="text-blue-500 underline hover:text-blue-700" href="/covenant-path/sacrament">Sacrament</a>
+          </li>
+          <li>
+            <a className="text-blue-500 underline hover:text-blue-700" href="/covenant-path/temple">Temple</a>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

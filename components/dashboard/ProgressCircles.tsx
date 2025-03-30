@@ -119,7 +119,7 @@ export default function ProgressCircles({
                     </Card>
                 ))}
             </dl>
-            <div className="my-6 w-full grid grid-cols-3 gap-3">
+            <div className="my-6 w-full grid sm:grid-cols-3 gap-3">
                 <EffortsDrawer questions={questions} efforts={efforts} slug={slug} />
                 <SacramentDrawer sacrament={sacrament} slug={slug} />
                 <TempleDrawer temple={temple} slug={slug} />
